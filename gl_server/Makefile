@@ -1,9 +1,12 @@
-CFLAGS=-O3 -Wall -DUSE_X11 -DGLS_SERVER
+CFLAGS=-O3 -Wall -DGLS_SERVER -DGL_GLES_PROTOTYPES=1
 
-LIBS=-L/opt/vc/lib/ -lX11 -lGLESv2 -lEGL -lpthread -lrt
-# -lopenmaxil -lbcm_host -lvcos -lvchiq_arm 
-INCLUDES=-I/opt/vc/include/ -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -I../common -I. -I./include
-OBJS=fifo.o glcontrol.o server.o serveregl.o servergles.o glserver.o
+# ANGLE for macOS
+MACOS_ANGLE_PATH=../angle
+CFLAGS+=-I$(MACOS_ANGLE_PATH)/include
+LIBS+=-L$(MACOS_ANGLE_PATH)/lib -lEGL -lGLESv2
+
+INCLUDES=-I/opt/vc/include/ -I/opt/vc/include/GLES3 -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -I../common -I. -I./include
+OBJS=fifo.o glcontrol.o server.o serveregl.o servergles.o servergles3.o glserver.o
 
 all: $(OBJS) gl_server
 
@@ -21,6 +24,9 @@ serveregl.o: serveregl.c glserver.h ../common/gls_command.h
 
 servergles.o: servergles.c glserver.h ../common/gls_command.h
 	gcc -c -o servergles.o $(CFLAGS) $(INCLUDES) servergles.c
+
+servergles3.o: servergles3.c glserver.h ../common/gls_command.h
+	gcc -c -o servergles3.o $(CFLAGS) $(INCLUDES) servergles3.c
 
 glserver.o: glserver.c glserver.h ../common/gls_command.h glcontrol.o server.o
 	gcc -c -o glserver.o $(CFLAGS) $(INCLUDES) glserver.c

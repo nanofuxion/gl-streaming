@@ -1,4 +1,4 @@
-CFLAGS=-O3 -Wall -I../common -I. -I./include -fPIC -g
+CFLAGS=-O3 -Wall -I../common -I. -I./include -I/opt/vc/include/GLES3 -fPIC -g -DGL_GLES_PROTOTYPES=1
 
 # Use X11
 CFLAGS+=-DUSE_X11
@@ -11,13 +11,13 @@ CFLAGS+=-DGLS_EMULATE_VBO
 
 LIBS=-pthread -ldl -lX11
 CFLAGS+= $(LIBS)
-OBJS=fifo.o server.o clientegl.o clientgles.o glclient.o
+OBJS=fifo.o server.o clientegl.o clientgles.o clientgles3.o glclient.o
 
-LIB_GLES=libGLESv2.so.2
+LIB_GLES=libGLESv3.so
 
 GLS_LIB_DIR=/usr/local/lib/gl-streaming
 
-EXES=$(LIB_GLES)
+EXES=$(LIB_GLES) libEGL.so
 
 all: $(EXES)
 
@@ -33,16 +33,22 @@ clientegl.o: clientegl.c include/EGL/egl.h
 clientgles.o: clientgles.c include/GLES2/gl2.h
 	gcc -c -o clientgles.o $(CFLAGS) clientgles.c
 
+clientgles3.o: clientgles3.c include/GLES3/gl32.h
+	gcc -c -o clientgles3.o $(CFLAGS) clientgles3.c
+
 glclient.o: glclient.c glclient.h ../common/gls_command.h server.o
 	gcc -c -o glclient.o $(CFLAGS) glclient.c
 
 $(LIB_GLES): $(OBJS)
 	gcc -shared -o $(LIB_GLES) $(CFLAGS) $(OBJS) -Wl,-init,gls_init_library,--no-undefined $(LIBS)
 
+libEGL.so: $(LIB_GLES)
+	ln -sf $(LIB_GLES) libEGL.so
+
 install:
 	mkdir -p $(GLS_LIB_DIR)
-	cp libGLESv2.so.2 $(GLS_LIB_DIR)/
-	ln -s $(GLS_LIB_DIR)/libGLESv2.so.2 $(GLS_LIB_DIR)/libEGL.so.1; echo "To use streaming, type: export LD_LIBRARY_PATH=$(GLS_LIB_DIR)\nThen you are ready to get hardware acceleration!"
+	cp libGLESv3.so $(GLS_LIB_DIR)/
+	ln -sf $(GLS_LIB_DIR)/libGLESv3.so $(GLS_LIB_DIR)/libEGL.so.1; echo "To use streaming, type: export LD_LIBRARY_PATH=$(GLS_LIB_DIR)\nThen you are ready to get hardware acceleration!"
 
 clean:
-	rm $(EXES) $(OBJS)
+	rm -f $(EXES) $(OBJS)

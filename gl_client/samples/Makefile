@@ -1,20 +1,25 @@
 CFLAGS=-O3 -Wall -g
 
 INCLUDES=-I.. -I../include -I../../common
-LIBS=-lpthread -lm -ldl -lGLESv2 -lEGL
+LIBS=-L.. -lpthread -lm -ldl -l:libGLESv3.so -l:libEGL.so
 OBJS=glsutil.o
-EXES=sample1 sample2
+EXES=sample1 sample2 sample3
 
 all: $(EXES)
 
 glsutil.o: glsutil.c glsutil.h
 	gcc -c -o glsutil.o $(CFLAGS) $(INCLUDES) glsutil.c
 
-sample1: sample1.c glsutil.o
+sample1: sample1.c glsutil.o ../libGLESv3.so ../libEGL.so
 # ../glclient.o ../clientegl.o ../clientgles.o
 	gcc -o sample1 $(CFLAGS) $(INCLUDES) sample1.c $(OBJS) $(LIBS)
 
-sample2: sample2.c glsutil.o
+sample2: sample2.c glsutil.o ../libGLESv3.so ../libEGL.so
 # ../glclient.o ../clientegl.o ../clientgles.o
 	gcc -o sample2 $(CFLAGS) $(INCLUDES) sample2.c $(OBJS) $(LIBS)
 
+sample3: sample3.c glsutil.o ../libGLESv3.so ../libEGL.so
+	gcc -o sample3 $(CFLAGS) $(INCLUDES) sample3.c $(OBJS) $(LIBS)
+
+clean:
+	rm -f $(EXES) $(OBJS)

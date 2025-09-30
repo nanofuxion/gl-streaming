@@ -66,6 +66,9 @@ int egl_flushCommand(gls_command_t *c);
 int gles_executeCommand(gls_command_t *c);
 int gles_flushCommand(gls_command_t *c);
 
+int gles3_executeCommand(gls_command_t *c);
+int gles3_flushCommand(gls_command_t *c);
+
 #ifdef __cplusplus
 }
 #endif
