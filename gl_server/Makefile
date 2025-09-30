@@ -1,14 +1,32 @@
 CFLAGS=-O3 -Wall -DGLS_SERVER -DGL_GLES_PROTOTYPES=1
 
-# ANGLE for macOS
-MACOS_ANGLE_PATH=../angle
-CFLAGS+=-I$(MACOS_ANGLE_PATH)/include
-LIBS+=-L$(MACOS_ANGLE_PATH)/lib -lEGL -lGLESv2
-
-INCLUDES=-I/opt/vc/include/ -I/opt/vc/include/GLES3 -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -I../common -I. -I./include
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Darwin)
+	MACOS_ANGLE_PATH=../angle
+	CFLAGS+=-DUSE_ANGLE -I$(MACOS_ANGLE_PATH)/include -Wno-int-conversion -Wno-incompatible-pointer-types
+	LIBS+=-L$(MACOS_ANGLE_PATH)/lib -lEGL -lGLESv2 -framework CoreFoundation -framework IOKit -framework CoreGraphics -framework Cocoa -framework Metal
+	INCLUDES=-I../common -I. -I./include
+else
+	INCLUDES=-I/opt/vc/include/ -I/opt/vc/include/GLES3 -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux -I../common -I. -I./include
+endif
 OBJS=fifo.o glcontrol.o server.o serveregl.o servergles.o servergles3.o glserver.o
 
-all: $(OBJS) gl_server
+all: check_angle $(OBJS) gl_server
+
+.PHONY: check_angle
+check_angle:
+ifeq ($(UNAME_S),Darwin)
+	@if [ ! -d "$(MACOS_ANGLE_PATH)/include" ]; then \
+		echo "Error: ANGLE not found at $(MACOS_ANGLE_PATH)"; \
+		echo "Please install ANGLE libraries:"; \
+		echo "  1. Download ANGLE from https://github.com/google/angle"; \
+		echo "  2. Build ANGLE or download pre-built binaries"; \
+		echo "  3. Create ../angle directory with include/ and lib/ subdirectories"; \
+		echo "  4. Copy ANGLE headers to ../angle/include"; \
+		echo "  5. Copy libEGL.dylib and libGLESv2.dylib to ../angle/lib"; \
+		exit 1; \
+	fi
+endif
 
 fifo.o: ../common/fifo.c ../common/fifo.h
 	gcc -c -o fifo.o $(CFLAGS) ../common/fifo.c

@@ -59,7 +59,7 @@ const char* eglGetErrorString(EGLint err)
 		CASE_STRING( EGL_BAD_NATIVE_WINDOW   )
 		CASE_STRING( EGL_CONTEXT_LOST        )
 		
-		default: return ("EGL_BAD_ERROR_%p", err);
+		default: return "EGL_BAD_ERROR";
     }
 }
 const char* glGetErrorString(GLenum err)
@@ -74,7 +74,7 @@ const char* glGetErrorString(GLenum err)
 		case 0x8065: /* not core */ return "GL_TEXTURE_TOO_LARGE_EXT";
 		CASE_STRING(GL_INVALID_FRAMEBUFFER_OPERATION)
 		
-		default: return("GL_BAD_ERROR_%p", err);
+		default: return "GL_BAD_ERROR";
     }
 }
 #undef CASE_STRING
@@ -223,7 +223,7 @@ void make_egl_base(EGLDisplay egl_dpy, EGLContext *ctxRet, EGLSurface *surfRet)
 {
    if (!eglInitialize(egl_dpy, NULL, NULL)) {
       printf("Error: eglInitialize() failed\n");
-      return -1;
+      return;
    }
 	
    static const EGLint attribs[] = {
@@ -327,7 +327,7 @@ void make_egl_base(EGLDisplay egl_dpy, EGLContext *ctxRet, EGLSurface *surfRet)
 #endif
 
    if (!*surfRet) {
-      printf("Error: eglCreateWindowSurface failed: %p\n", eglGetError());
+      printf("Error: eglCreateWindowSurface failed: 0x%x\n", eglGetError());
       exit(1);
    }
 
