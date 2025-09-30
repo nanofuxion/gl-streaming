@@ -161,7 +161,229 @@ enum GL_Server_Command
   
 // OES / EXT extension commands
   GLSC_glMapBufferOES,
-  GLSC_glUnmapBufferOES
+  GLSC_glUnmapBufferOES,
+
+  // GLES 3.0 commands
+  GLSC_glReadBuffer,
+  GLSC_glDrawRangeElements,
+  GLSC_glTexImage3D,
+  GLSC_glTexSubImage3D,
+  GLSC_glCopyTexSubImage3D,
+  GLSC_glCompressedTexImage3D,
+  GLSC_glCompressedTexSubImage3D,
+  GLSC_glGenQueries,
+  GLSC_glDeleteQueries,
+  GLSC_glIsQuery,
+  GLSC_glBeginQuery,
+  GLSC_glEndQuery,
+  GLSC_glGetQueryiv,
+  GLSC_glGetQueryObjectuiv,
+  GLSC_glUnmapBuffer,
+  GLSC_glGetBufferPointerv,
+  GLSC_glDrawBuffers,
+  GLSC_glUniformMatrix2x3fv,
+  GLSC_glUniformMatrix3x2fv,
+  GLSC_glUniformMatrix2x4fv,
+  GLSC_glUniformMatrix4x2fv,
+  GLSC_glUniformMatrix3x4fv,
+  GLSC_glUniformMatrix4x3fv,
+  GLSC_glBlitFramebuffer,
+  GLSC_glRenderbufferStorageMultisample,
+  GLSC_glFramebufferTextureLayer,
+  GLSC_glMapBufferRange,
+  GLSC_glFlushMappedBufferRange,
+  GLSC_glBindVertexArray,
+  GLSC_glDeleteVertexArrays,
+  GLSC_glGenVertexArrays,
+  GLSC_glIsVertexArray,
+  GLSC_glGetIntegeri_v,
+  GLSC_glBeginTransformFeedback,
+  GLSC_glEndTransformFeedback,
+  GLSC_glBindBufferRange,
+  GLSC_glBindBufferBase,
+  GLSC_glTransformFeedbackVaryings,
+  GLSC_glGetTransformFeedbackVarying,
+  GLSC_glVertexAttribIPointer,
+  GLSC_glGetVertexAttribIiv,
+  GLSC_glGetVertexAttribIuiv,
+  GLSC_glVertexAttribI4i,
+  GLSC_glVertexAttribI4ui,
+  GLSC_glVertexAttribI4iv,
+  GLSC_glVertexAttribI4uiv,
+  GLSC_glGetUniformuiv,
+  GLSC_glGetFragDataLocation,
+  GLSC_glUniform1ui,
+  GLSC_glUniform2ui,
+  GLSC_glUniform3ui,
+  GLSC_glUniform4ui,
+  GLSC_glUniform1uiv,
+  GLSC_glUniform2uiv,
+  GLSC_glUniform3uiv,
+  GLSC_glUniform4uiv,
+  GLSC_glClearBufferiv,
+  GLSC_glClearBufferuiv,
+  GLSC_glClearBufferfv,
+  GLSC_glClearBufferfi,
+  GLSC_glGetStringi,
+  GLSC_glCopyBufferSubData,
+  GLSC_glGetUniformIndices,
+  GLSC_glGetActiveUniformsiv,
+  GLSC_glGetUniformBlockIndex,
+  GLSC_glGetActiveUniformBlockiv,
+  GLSC_glGetActiveUniformBlockName,
+  GLSC_glUniformBlockBinding,
+  GLSC_glDrawArraysInstanced,
+  GLSC_glDrawElementsInstanced,
+  GLSC_glFenceSync,
+  GLSC_glIsSync,
+  GLSC_glDeleteSync,
+  GLSC_glClientWaitSync,
+  GLSC_glWaitSync,
+  GLSC_glGetInteger64v,
+  GLSC_glGetSynciv,
+  GLSC_glGetInteger64i_v,
+  GLSC_glGetBufferParameteri64v,
+  GLSC_glGenSamplers,
+  GLSC_glDeleteSamplers,
+  GLSC_glIsSampler,
+  GLSC_glBindSampler,
+  GLSC_glSamplerParameteri,
+  GLSC_glSamplerParameteriv,
+  GLSC_glSamplerParameterf,
+  GLSC_glSamplerParameterfv,
+  GLSC_glGetSamplerParameteriv,
+  GLSC_glGetSamplerParameterfv,
+  GLSC_glVertexAttribDivisor,
+  GLSC_glBindTransformFeedback,
+  GLSC_glDeleteTransformFeedbacks,
+  GLSC_glGenTransformFeedbacks,
+  GLSC_glIsTransformFeedback,
+  GLSC_glPauseTransformFeedback,
+  GLSC_glResumeTransformFeedback,
+  GLSC_glGetProgramBinary,
+  GLSC_glProgramBinary,
+  GLSC_glProgramParameteri,
+  GLSC_glInvalidateFramebuffer,
+  GLSC_glInvalidateSubFramebuffer,
+  GLSC_glTexStorage2D,
+  GLSC_glTexStorage3D,
+  GLSC_glGetInternalformativ,
+
+  // GLES 3.1 commands
+  GLSC_glDispatchCompute,
+  GLSC_glDispatchComputeIndirect,
+  GLSC_glDrawArraysIndirect,
+  GLSC_glDrawElementsIndirect,
+  GLSC_glFramebufferParameteri,
+  GLSC_glGetFramebufferParameteriv,
+  GLSC_glGetProgramInterfaceiv,
+  GLSC_glGetProgramResourceIndex,
+  GLSC_glGetProgramResourceName,
+  GLSC_glGetProgramResourceiv,
+  GLSC_glGetProgramResourceLocation,
+  GLSC_glUseProgramStages,
+  GLSC_glActiveShaderProgram,
+  GLSC_glCreateShaderProgramv,
+  GLSC_glBindProgramPipeline,
+  GLSC_glDeleteProgramPipelines,
+  GLSC_glGenProgramPipelines,
+  GLSC_glIsProgramPipeline,
+  GLSC_glGetProgramPipelineiv,
+  GLSC_glProgramUniform1i,
+  GLSC_glProgramUniform2i,
+  GLSC_glProgramUniform3i,
+  GLSC_glProgramUniform4i,
+  GLSC_glProgramUniform1ui,
+  GLSC_glProgramUniform2ui,
+  GLSC_glProgramUniform3ui,
+  GLSC_glProgramUniform4ui,
+  GLSC_glProgramUniform1f,
+  GLSC_glProgramUniform2f,
+  GLSC_glProgramUniform3f,
+  GLSC_glProgramUniform4f,
+  GLSC_glProgramUniform1iv,
+  GLSC_glProgramUniform2iv,
+  GLSC_glProgramUniform3iv,
+  GLSC_glProgramUniform4iv,
+  GLSC_glProgramUniform1uiv,
+  GLSC_glProgramUniform2uiv,
+  GLSC_glProgramUniform3uiv,
+  GLSC_glProgramUniform4uiv,
+  GLSC_glProgramUniform1fv,
+  GLSC_glProgramUniform2fv,
+  GLSC_glProgramUniform3fv,
+  GLSC_glProgramUniform4fv,
+  GLSC_glProgramUniformMatrix2fv,
+  GLSC_glProgramUniformMatrix3fv,
+  GLSC_glProgramUniformMatrix4fv,
+  GLSC_glProgramUniformMatrix2x3fv,
+  GLSC_glProgramUniformMatrix3x2fv,
+  GLSC_glProgramUniformMatrix2x4fv,
+  GLSC_glProgramUniformMatrix4x2fv,
+  GLSC_glProgramUniformMatrix3x4fv,
+  GLSC_glProgramUniformMatrix4x3fv,
+  GLSC_glValidateProgramPipeline,
+  GLSC_glGetProgramPipelineInfoLog,
+  GLSC_glBindImageTexture,
+  GLSC_glGetBooleani_v,
+  GLSC_glMemoryBarrier,
+  GLSC_glMemoryBarrierByRegion,
+  GLSC_glTexStorage2DMultisample,
+  GLSC_glGetMultisamplefv,
+  GLSC_glSampleMaski,
+  GLSC_glGetTexLevelParameteriv,
+  GLSC_glGetTexLevelParameterfv,
+  GLSC_glBindVertexBuffer,
+  GLSC_glVertexAttribFormat,
+  GLSC_glVertexAttribIFormat,
+  GLSC_glVertexAttribBinding,
+  GLSC_glVertexBindingDivisor,
+
+  // GLES 3.2 commands
+  GLSC_glBlendBarrier,
+  GLSC_glCopyImageSubData,
+  GLSC_glDebugMessageControl,
+  GLSC_glDebugMessageInsert,
+  GLSC_glDebugMessageCallback,
+  GLSC_glGetDebugMessageLog,
+  GLSC_glPushDebugGroup,
+  GLSC_glPopDebugGroup,
+  GLSC_glObjectLabel,
+  GLSC_glGetObjectLabel,
+  GLSC_glObjectPtrLabel,
+  GLSC_glGetObjectPtrLabel,
+  GLSC_glGetPointerv,
+  GLSC_glEnablei,
+  GLSC_glDisablei,
+  GLSC_glBlendEquationi,
+  GLSC_glBlendEquationSeparatei,
+  GLSC_glBlendFunci,
+  GLSC_glBlendFuncSeparatei,
+  GLSC_glColorMaski,
+  GLSC_glIsEnabledi,
+  GLSC_glDrawElementsBaseVertex,
+  GLSC_glDrawRangeElementsBaseVertex,
+  GLSC_glDrawElementsInstancedBaseVertex,
+  GLSC_glFramebufferTexture,
+  GLSC_glPrimitiveBoundingBox,
+  GLSC_glGetGraphicsResetStatus,
+  GLSC_glReadnPixels,
+  GLSC_glGetnUniformfv,
+  GLSC_glGetnUniformiv,
+  GLSC_glGetnUniformuiv,
+  GLSC_glMinSampleShading,
+  GLSC_glPatchParameteri,
+  GLSC_glTexParameterIiv,
+  GLSC_glTexParameterIuiv,
+  GLSC_glGetTexParameterIiv,
+  GLSC_glGetTexParameterIuiv,
+  GLSC_glSamplerParameterIiv,
+  GLSC_glSamplerParameterIuiv,
+  GLSC_glGetSamplerParameterIiv,
+  GLSC_glGetSamplerParameterIuiv,
+  GLSC_glTexBuffer,
+  GLSC_glTexBufferRange,
+  GLSC_glTexStorage3DMultisample
 };
 
 
@@ -1257,6 +1479,2078 @@ typedef struct
   uint32_t type;
   char image[GLS_STRING_SIZE_PLUS];
 } gls_glConvolutionFilter1D_t;
+
+
+// GLES 3.0 command data
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t src;
+} gls_glReadBuffer_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t cmd_size;
+  uint32_t mode;
+  uint32_t start;
+  uint32_t end;
+  int32_t count;
+  uint32_t type;
+  char indices[GLS_STRING_SIZE_PLUS];
+  uint32_t indices_isnull;
+  uint32_t indices_uint;
+} gls_glDrawRangeElements_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t cmd_size;
+  uint32_t target;
+  int32_t level;
+  int32_t internalformat;
+  int32_t width;
+  int32_t height;
+  int32_t depth;
+  int32_t border;
+  uint32_t format;
+  uint32_t type;
+  char pixels[4];
+  uint32_t pixels_isnull;
+} gls_glTexImage3D_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t cmd_size;
+  uint32_t target;
+  int32_t level;
+  int32_t xoffset;
+  int32_t yoffset;
+  int32_t zoffset;
+  int32_t width;
+  int32_t height;
+  int32_t depth;
+  uint32_t format;
+  uint32_t type;
+  char pixels[4];
+  uint32_t pixels_isnull;
+} gls_glTexSubImage3D_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t level;
+  int32_t xoffset;
+  int32_t yoffset;
+  int32_t zoffset;
+  int32_t x;
+  int32_t y;
+  int32_t width;
+  int32_t height;
+} gls_glCopyTexSubImage3D_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t cmd_size;
+  uint32_t target;
+  int32_t level;
+  uint32_t internalformat;
+  int32_t width;
+  int32_t height;
+  int32_t depth;
+  int32_t border;
+  int32_t imageSize;
+  char data[4];
+} gls_glCompressedTexImage3D_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t cmd_size;
+  uint32_t target;
+  int32_t level;
+  int32_t xoffset;
+  int32_t yoffset;
+  int32_t zoffset;
+  int32_t width;
+  int32_t height;
+  int32_t depth;
+  uint32_t format;
+  int32_t imageSize;
+  char data[4];
+} gls_glCompressedTexSubImage3D_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t n;
+} gls_glGenQueries_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t n;
+} gls_glDeleteQueries_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t id;
+} gls_glIsQuery_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t result;
+} gls_ret_glIsQuery_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t id;
+} gls_glBeginQuery_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+} gls_glEndQuery_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t pname;
+} gls_glGetQueryiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[4];
+} gls_ret_glGetQueryiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t id;
+  uint32_t pname;
+} gls_glGetQueryObjectuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t params[4];
+} gls_ret_glGetQueryObjectuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+} gls_glUnmapBuffer_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t success;
+} gls_ret_glUnmapBuffer_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t n;
+} gls_glDrawBuffers_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glUniformMatrix2x3fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glUniformMatrix3x2fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glUniformMatrix2x4fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glUniformMatrix4x2fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glUniformMatrix3x4fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glUniformMatrix4x3fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t srcX0;
+  int32_t srcY0;
+  int32_t srcX1;
+  int32_t srcY1;
+  int32_t dstX0;
+  int32_t dstY0;
+  int32_t dstX1;
+  int32_t dstY1;
+  uint32_t mask;
+  uint32_t filter;
+} gls_glBlitFramebuffer_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t samples;
+  uint32_t internalformat;
+  int32_t width;
+  int32_t height;
+} gls_glRenderbufferStorageMultisample_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t attachment;
+  uint32_t texture;
+  int32_t level;
+  int32_t layer;
+} gls_glFramebufferTextureLayer_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t offset;
+  int32_t length;
+  uint32_t access;
+} gls_glMapBufferRange_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t offset;
+  int32_t length;
+} gls_glFlushMappedBufferRange_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t array;
+} gls_glBindVertexArray_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t n;
+} gls_glDeleteVertexArrays_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t n;
+} gls_glGenVertexArrays_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t array;
+} gls_glIsVertexArray_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t result;
+} gls_ret_glIsVertexArray_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t index;
+} gls_glGetIntegeri_v_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t data[4];
+} gls_ret_glGetIntegeri_v_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t primitiveMode;
+} gls_glBeginTransformFeedback_t;
+
+typedef struct
+{
+  uint32_t cmd;
+} gls_glEndTransformFeedback_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t index;
+  uint32_t buffer;
+  int32_t offset;
+  int32_t size;
+} gls_glBindBufferRange_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t index;
+  uint32_t buffer;
+} gls_glBindBufferBase_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t count;
+  uint32_t bufferMode;
+} gls_glTransformFeedbackVaryings_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  uint32_t index;
+  int32_t bufSize;
+} gls_glGetTransformFeedbackVarying_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t length;
+  int32_t size;
+  uint32_t type;
+  char name[GLS_STRING_SIZE_PLUS];
+} gls_ret_glGetTransformFeedbackVarying_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t index;
+  int32_t size;
+  uint32_t type;
+  int32_t stride;
+  uint32_t pointer_isnull;
+  uint32_t pointer_uint;
+} gls_glVertexAttribIPointer_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t index;
+  uint32_t pname;
+} gls_glGetVertexAttribIiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[4];
+} gls_ret_glGetVertexAttribIiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t index;
+  uint32_t pname;
+} gls_glGetVertexAttribIuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t params[4];
+} gls_ret_glGetVertexAttribIuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t index;
+  int32_t x;
+  int32_t y;
+  int32_t z;
+  int32_t w;
+} gls_glVertexAttribI4i_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t index;
+  uint32_t x;
+  uint32_t y;
+  uint32_t z;
+  uint32_t w;
+} gls_glVertexAttribI4ui_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t index;
+} gls_glVertexAttribI4iv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t index;
+} gls_glVertexAttribI4uiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+} gls_glGetUniformuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t params[4];
+} gls_ret_glGetUniformuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  char name[GLS_STRING_SIZE_PLUS];
+} gls_glGetFragDataLocation_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+} gls_ret_glGetFragDataLocation_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  uint32_t v0;
+} gls_glUniform1ui_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  uint32_t v0;
+  uint32_t v1;
+} gls_glUniform2ui_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  uint32_t v0;
+  uint32_t v1;
+  uint32_t v2;
+} gls_glUniform3ui_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  uint32_t v0;
+  uint32_t v1;
+  uint32_t v2;
+  uint32_t v3;
+} gls_glUniform4ui_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  int32_t count;
+} gls_glUniform1uiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  int32_t count;
+} gls_glUniform2uiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  int32_t count;
+} gls_glUniform3uiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+  int32_t count;
+} gls_glUniform4uiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t buffer;
+  int32_t drawbuffer;
+} gls_glClearBufferiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t buffer;
+  int32_t drawbuffer;
+} gls_glClearBufferuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t buffer;
+  int32_t drawbuffer;
+} gls_glClearBufferfv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t buffer;
+  int32_t drawbuffer;
+  float depth;
+  int32_t stencil;
+} gls_glClearBufferfi_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t name;
+  uint32_t index;
+} gls_glGetStringi_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  char params[GLS_STRING_SIZE_PLUS];
+} gls_ret_glGetStringi_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t readTarget;
+  uint32_t writeTarget;
+  int32_t readOffset;
+  int32_t writeOffset;
+  int32_t size;
+} gls_glCopyBufferSubData_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t uniformCount;
+} gls_glGetUniformIndices_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t uniformIndices[GLS_DATA_SIZE];
+} gls_ret_glGetUniformIndices_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t uniformCount;
+  uint32_t pname;
+} gls_glGetActiveUniformsiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[GLS_DATA_SIZE];
+} gls_ret_glGetActiveUniformsiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  char uniformBlockName[GLS_STRING_SIZE_PLUS];
+} gls_glGetUniformBlockIndex_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t uniformBlockIndex;
+} gls_ret_glGetUniformBlockIndex_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  uint32_t uniformBlockIndex;
+  uint32_t pname;
+} gls_glGetActiveUniformBlockiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[GLS_DATA_SIZE];
+} gls_ret_glGetActiveUniformBlockiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  uint32_t uniformBlockIndex;
+  int32_t bufSize;
+} gls_glGetActiveUniformBlockName_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t length;
+  char uniformBlockName[GLS_STRING_SIZE_PLUS];
+} gls_ret_glGetActiveUniformBlockName_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  uint32_t uniformBlockIndex;
+  uint32_t uniformBlockBinding;
+} gls_glUniformBlockBinding_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t mode;
+  int32_t first;
+  int32_t count;
+  int32_t instancecount;
+} gls_glDrawArraysInstanced_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t mode;
+  int32_t count;
+  uint32_t type;
+  uint32_t indices_isnull;
+  uint32_t indices_uint;
+  int32_t instancecount;
+} gls_glDrawElementsInstanced_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t condition;
+  uint32_t flags;
+} gls_glFenceSync_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sync;
+} gls_ret_glFenceSync_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sync;
+} gls_glIsSync_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t result;
+} gls_ret_glIsSync_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sync;
+} gls_glDeleteSync_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sync;
+  uint32_t flags;
+  uint64_t timeout;
+} gls_glClientWaitSync_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t result;
+} gls_ret_glClientWaitSync_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sync;
+  uint32_t flags;
+  uint64_t timeout;
+} gls_glWaitSync_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t pname;
+} gls_glGetInteger64v_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int64_t data[4];
+} gls_ret_glGetInteger64v_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sync;
+  uint32_t pname;
+  int32_t bufSize;
+} gls_glGetSynciv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t length;
+  int32_t values[4];
+} gls_ret_glGetSynciv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t index;
+} gls_glGetInteger64i_v_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int64_t data[4];
+} gls_ret_glGetInteger64i_v_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t pname;
+} gls_glGetBufferParameteri64v_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int64_t params[4];
+} gls_ret_glGetBufferParameteri64v_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t count;
+} gls_glGenSamplers_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t count;
+} gls_glDeleteSamplers_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sampler;
+} gls_glIsSampler_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t result;
+} gls_ret_glIsSampler_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t unit;
+  uint32_t sampler;
+} gls_glBindSampler_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sampler;
+  uint32_t pname;
+  int32_t param;
+} gls_glSamplerParameteri_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sampler;
+  uint32_t pname;
+} gls_glSamplerParameteriv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sampler;
+  uint32_t pname;
+  float param;
+} gls_glSamplerParameterf_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sampler;
+  uint32_t pname;
+} gls_glSamplerParameterfv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sampler;
+  uint32_t pname;
+} gls_glGetSamplerParameteriv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[4];
+} gls_ret_glGetSamplerParameteriv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sampler;
+  uint32_t pname;
+} gls_glGetSamplerParameterfv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  float params[4];
+} gls_ret_glGetSamplerParameterfv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t index;
+  uint32_t divisor;
+} gls_glVertexAttribDivisor_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t id;
+} gls_glBindTransformFeedback_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t n;
+} gls_glDeleteTransformFeedbacks_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t n;
+} gls_glGenTransformFeedbacks_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t id;
+} gls_glIsTransformFeedback_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t result;
+} gls_ret_glIsTransformFeedback_t;
+
+typedef struct
+{
+  uint32_t cmd;
+} gls_glPauseTransformFeedback_t;
+
+typedef struct
+{
+  uint32_t cmd;
+} gls_glResumeTransformFeedback_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t bufSize;
+} gls_glGetProgramBinary_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t length;
+  uint32_t binaryFormat;
+} gls_ret_glGetProgramBinary_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  uint32_t binaryFormat;
+  int32_t length;
+} gls_glProgramBinary_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  uint32_t pname;
+  int32_t value;
+} gls_glProgramParameteri_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t numAttachments;
+} gls_glInvalidateFramebuffer_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t numAttachments;
+  int32_t x;
+  int32_t y;
+  int32_t width;
+  int32_t height;
+} gls_glInvalidateSubFramebuffer_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t levels;
+  uint32_t internalformat;
+  int32_t width;
+  int32_t height;
+} gls_glTexStorage2D_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t levels;
+  uint32_t internalformat;
+  int32_t width;
+  int32_t height;
+  int32_t depth;
+} gls_glTexStorage3D_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t internalformat;
+  uint32_t pname;
+  int32_t bufSize;
+} gls_glGetInternalformativ_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[GLS_DATA_SIZE];
+} gls_ret_glGetInternalformativ_t;
+
+// GLES 3.1 command data
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t num_groups_x;
+  uint32_t num_groups_y;
+  uint32_t num_groups_z;
+} gls_glDispatchCompute_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t indirect;
+} gls_glDispatchComputeIndirect_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t mode;
+  uint32_t indirect_isnull;
+  uint32_t indirect_uint;
+} gls_glDrawArraysIndirect_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t mode;
+  uint32_t type;
+  uint32_t indirect_isnull;
+  uint32_t indirect_uint;
+} gls_glDrawElementsIndirect_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t pname;
+  int32_t param;
+} gls_glFramebufferParameteri_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t pname;
+} gls_glGetFramebufferParameteriv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[4];
+} gls_ret_glGetFramebufferParameteriv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  uint32_t programInterface;
+  uint32_t pname;
+} gls_glGetProgramInterfaceiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[4];
+} gls_ret_glGetProgramInterfaceiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  uint32_t programInterface;
+  char name[GLS_STRING_SIZE_PLUS];
+} gls_glGetProgramResourceIndex_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t index;
+} gls_ret_glGetProgramResourceIndex_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  uint32_t programInterface;
+  uint32_t index;
+  int32_t bufSize;
+} gls_glGetProgramResourceName_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t length;
+  char name[GLS_STRING_SIZE_PLUS];
+} gls_ret_glGetProgramResourceName_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  uint32_t programInterface;
+  uint32_t index;
+  int32_t propCount;
+  int32_t bufSize;
+} gls_glGetProgramResourceiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t length;
+  int32_t params[GLS_DATA_SIZE];
+} gls_ret_glGetProgramResourceiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  uint32_t programInterface;
+  char name[GLS_STRING_SIZE_PLUS];
+} gls_glGetProgramResourceLocation_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t location;
+} gls_ret_glGetProgramResourceLocation_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t pipeline;
+  uint32_t stages;
+  uint32_t program;
+} gls_glUseProgramStages_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t pipeline;
+  uint32_t program;
+} gls_glActiveShaderProgram_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t type;
+  int32_t count;
+} gls_glCreateShaderProgramv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+} gls_ret_glCreateShaderProgramv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t pipeline;
+} gls_glBindProgramPipeline_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t n;
+} gls_glDeleteProgramPipelines_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t n;
+} gls_glGenProgramPipelines_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t pipeline;
+} gls_glIsProgramPipeline_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t result;
+} gls_ret_glIsProgramPipeline_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t pipeline;
+  uint32_t pname;
+} gls_glGetProgramPipelineiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[4];
+} gls_ret_glGetProgramPipelineiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t v0;
+} gls_glProgramUniform1i_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t v0;
+  int32_t v1;
+} gls_glProgramUniform2i_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t v0;
+  int32_t v1;
+  int32_t v2;
+} gls_glProgramUniform3i_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t v0;
+  int32_t v1;
+  int32_t v2;
+  int32_t v3;
+} gls_glProgramUniform4i_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  uint32_t v0;
+} gls_glProgramUniform1ui_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  uint32_t v0;
+  uint32_t v1;
+} gls_glProgramUniform2ui_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  uint32_t v0;
+  uint32_t v1;
+  uint32_t v2;
+} gls_glProgramUniform3ui_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  uint32_t v0;
+  uint32_t v1;
+  uint32_t v2;
+  uint32_t v3;
+} gls_glProgramUniform4ui_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  float v0;
+} gls_glProgramUniform1f_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  float v0;
+  float v1;
+} gls_glProgramUniform2f_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  float v0;
+  float v1;
+  float v2;
+} gls_glProgramUniform3f_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  float v0;
+  float v1;
+  float v2;
+  float v3;
+} gls_glProgramUniform4f_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform1iv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform2iv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform3iv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform4iv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform1uiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform2uiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform3uiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform4uiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform1fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform2fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform3fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+} gls_glProgramUniform4fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glProgramUniformMatrix2fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glProgramUniformMatrix3fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glProgramUniformMatrix4fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glProgramUniformMatrix2x3fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glProgramUniformMatrix3x2fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glProgramUniformMatrix2x4fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glProgramUniformMatrix4x2fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glProgramUniformMatrix3x4fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t count;
+  uint32_t transpose;
+} gls_glProgramUniformMatrix4x3fv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t pipeline;
+} gls_glValidateProgramPipeline_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t pipeline;
+  int32_t bufSize;
+} gls_glGetProgramPipelineInfoLog_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t length;
+  char infoLog[GLS_STRING_SIZE_PLUS];
+} gls_ret_glGetProgramPipelineInfoLog_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t unit;
+  uint32_t texture;
+  int32_t level;
+  uint32_t layered;
+  int32_t layer;
+  uint32_t access;
+  uint32_t format;
+} gls_glBindImageTexture_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t index;
+} gls_glGetBooleani_v_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t data;
+} gls_ret_glGetBooleani_v_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t barriers;
+} gls_glMemoryBarrier_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t barriers;
+} gls_glMemoryBarrierByRegion_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t samples;
+  uint32_t internalformat;
+  int32_t width;
+  int32_t height;
+  uint32_t fixedsamplelocations;
+} gls_glTexStorage2DMultisample_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t pname;
+  uint32_t index;
+} gls_glGetMultisamplefv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  float val[2];
+} gls_ret_glGetMultisamplefv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t maskNumber;
+  uint32_t mask;
+} gls_glSampleMaski_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t level;
+  uint32_t pname;
+} gls_glGetTexLevelParameteriv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[4];
+} gls_ret_glGetTexLevelParameteriv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t level;
+  uint32_t pname;
+} gls_glGetTexLevelParameterfv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  float params[4];
+} gls_ret_glGetTexLevelParameterfv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t bindingindex;
+  uint32_t buffer;
+  int32_t offset;
+  int32_t stride;
+} gls_glBindVertexBuffer_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t attribindex;
+  int32_t size;
+  uint32_t type;
+  uint32_t normalized;
+  uint32_t relativeoffset;
+} gls_glVertexAttribFormat_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t attribindex;
+  int32_t size;
+  uint32_t type;
+  uint32_t relativeoffset;
+} gls_glVertexAttribIFormat_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t attribindex;
+  uint32_t bindingindex;
+} gls_glVertexAttribBinding_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t bindingindex;
+  uint32_t divisor;
+} gls_glVertexBindingDivisor_t;
+
+// GLES 3.2 command data
+typedef struct
+{
+  uint32_t cmd;
+} gls_glBlendBarrier_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t srcName;
+  uint32_t srcTarget;
+  int32_t srcLevel;
+  int32_t srcX;
+  int32_t srcY;
+  int32_t srcZ;
+  uint32_t dstName;
+  uint32_t dstTarget;
+  int32_t dstLevel;
+  int32_t dstX;
+  int32_t dstY;
+  int32_t dstZ;
+  int32_t srcWidth;
+  int32_t srcHeight;
+  int32_t srcDepth;
+} gls_glCopyImageSubData_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t source;
+  uint32_t type;
+  uint32_t severity;
+  int32_t count;
+  uint32_t enabled;
+} gls_glDebugMessageControl_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t source;
+  uint32_t type;
+  uint32_t id;
+  uint32_t severity;
+  int32_t length;
+} gls_glDebugMessageInsert_t;
+
+typedef struct
+{
+  uint32_t cmd;
+} gls_glDebugMessageCallback_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t count;
+  int32_t bufSize;
+} gls_glGetDebugMessageLog_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t source;
+  uint32_t id;
+  int32_t length;
+} gls_glPushDebugGroup_t;
+
+typedef struct
+{
+  uint32_t cmd;
+} gls_glPopDebugGroup_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t identifier;
+  uint32_t name;
+  int32_t length;
+} gls_glObjectLabel_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t identifier;
+  uint32_t name;
+  int32_t bufSize;
+} gls_glGetObjectLabel_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t length;
+  char label[GLS_STRING_SIZE_PLUS];
+} gls_ret_glGetObjectLabel_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t length;
+} gls_glObjectPtrLabel_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t bufSize;
+} gls_glGetObjectPtrLabel_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t length;
+  char label[GLS_STRING_SIZE_PLUS];
+} gls_ret_glGetObjectPtrLabel_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t pname;
+} gls_glGetPointerv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t index;
+} gls_glEnablei_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t index;
+} gls_glDisablei_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t buf;
+  uint32_t mode;
+} gls_glBlendEquationi_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t buf;
+  uint32_t modeRGB;
+  uint32_t modeAlpha;
+} gls_glBlendEquationSeparatei_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t buf;
+  uint32_t src;
+  uint32_t dst;
+} gls_glBlendFunci_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t buf;
+  uint32_t srcRGB;
+  uint32_t dstRGB;
+  uint32_t srcAlpha;
+  uint32_t dstAlpha;
+} gls_glBlendFuncSeparatei_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t index;
+  uint32_t r;
+  uint32_t g;
+  uint32_t b;
+  uint32_t a;
+} gls_glColorMaski_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t index;
+} gls_glIsEnabledi_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t result;
+} gls_ret_glIsEnabledi_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t mode;
+  int32_t count;
+  uint32_t type;
+  int32_t basevertex;
+} gls_glDrawElementsBaseVertex_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t mode;
+  uint32_t start;
+  uint32_t end;
+  int32_t count;
+  uint32_t type;
+  int32_t basevertex;
+} gls_glDrawRangeElementsBaseVertex_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t mode;
+  int32_t count;
+  uint32_t type;
+  int32_t instancecount;
+  int32_t basevertex;
+} gls_glDrawElementsInstancedBaseVertex_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t attachment;
+  uint32_t texture;
+  int32_t level;
+} gls_glFramebufferTexture_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  float minX;
+  float minY;
+  float minZ;
+  float minW;
+  float maxX;
+  float maxY;
+  float maxZ;
+  float maxW;
+} gls_glPrimitiveBoundingBox_t;
+
+typedef struct
+{
+  uint32_t cmd;
+} gls_glGetGraphicsResetStatus_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t status;
+} gls_ret_glGetGraphicsResetStatus_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t x;
+  int32_t y;
+  int32_t width;
+  int32_t height;
+  uint32_t format;
+  uint32_t type;
+  int32_t bufSize;
+} gls_glReadnPixels_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t bufSize;
+} gls_glGetnUniformfv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t bufSize;
+} gls_glGetnUniformiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t program;
+  int32_t location;
+  int32_t bufSize;
+} gls_glGetnUniformuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  float value;
+} gls_glMinSampleShading_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t pname;
+  int32_t value;
+} gls_glPatchParameteri_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t pname;
+} gls_glTexParameterIiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t pname;
+} gls_glTexParameterIuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t pname;
+} gls_glGetTexParameterIiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[4];
+} gls_ret_glGetTexParameterIiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t pname;
+} gls_glGetTexParameterIuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t params[4];
+} gls_ret_glGetTexParameterIuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sampler;
+  uint32_t pname;
+} gls_glSamplerParameterIiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sampler;
+  uint32_t pname;
+} gls_glSamplerParameterIuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sampler;
+  uint32_t pname;
+} gls_glGetSamplerParameterIiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  int32_t params[4];
+} gls_ret_glGetSamplerParameterIiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t sampler;
+  uint32_t pname;
+} gls_glGetSamplerParameterIuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t params[4];
+} gls_ret_glGetSamplerParameterIuiv_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t internalformat;
+  uint32_t buffer;
+} gls_glTexBuffer_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  uint32_t internalformat;
+  uint32_t buffer;
+  int32_t offset;
+  int32_t size;
+} gls_glTexBufferRange_t;
+
+typedef struct
+{
+  uint32_t cmd;
+  uint32_t target;
+  int32_t samples;
+  uint32_t internalformat;
+  int32_t width;
+  int32_t height;
+  int32_t depth;
+  uint32_t fixedsamplelocations;
+} gls_glTexStorage3DMultisample_t;
 
 
 /*

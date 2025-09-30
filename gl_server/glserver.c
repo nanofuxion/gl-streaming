@@ -150,6 +150,9 @@ void glse_cmd_flush()
 		if (result == FALSE) {
 			result = gles_flushCommand(c);
 		}
+		if (result == FALSE) {
+			result = gles3_flushCommand(c);
+		}
 		
         if (result == FALSE) {
 			LOGE("Error: Command Flush %i", c->cmd);
@@ -223,6 +226,9 @@ void * glserver_thread(void * arg)
 		  // Attempt to execute EGL first, if fail then attepmt to GLES.
 		  if (result == FALSE) {
 			  result = gles_executeCommand(c);
+		  }
+		  if (result == FALSE) {
+			  result = gles3_executeCommand(c);
 		  }
 		  
 		  if (result == FALSE) {

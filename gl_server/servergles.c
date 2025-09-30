@@ -25,7 +25,22 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 // This file declare OpenGL ES methods on server side
 
+#include <string.h>
 #include "glserver.h"
+
+#ifdef USE_ANGLE
+#define GL_WRITE_ONLY_OES 0x88B9
+
+static void* glMapBufferOES(GLenum target, GLenum access) {
+    (void)target; (void)access;
+    return NULL;
+}
+
+static GLboolean glUnmapBufferOES(GLenum target) {
+    (void)target;
+    return GL_FALSE;
+}
+#endif
 
 
 void glse_glActiveTexture()
