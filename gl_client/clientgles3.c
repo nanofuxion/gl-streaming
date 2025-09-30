@@ -1,32 +1,60 @@
-/*
+#include <string.h>
 Copyright (c) 2024, The Khronos Group Inc.
+#include <string.h>
 All rights reserved.
+#include <string.h>
 
+#include <string.h>
 Redistribution and use in source and binary forms, with or without modification,
+#include <string.h>
 are permitted provided that the following conditions are met:
+#include <string.h>
 
+#include <string.h>
   Redistributions of source code must retain the above copyright notice, this
+#include <string.h>
   list of conditions and the following disclaimer.
+#include <string.h>
 
+#include <string.h>
   Redistributions in binary form must reproduce the above copyright notice, this
+#include <string.h>
   list of conditions and the following disclaimer in the documentation and/or
+#include <string.h>
   other materials provided with the distribution.
+#include <string.h>
 
+#include <string.h>
   Neither the name of the copyright holders nor the names of its
+#include <string.h>
   contributors may be used to endorse or promote products derived from
+#include <string.h>
   this software without specific prior written permission.
+#include <string.h>
 
+#include <string.h>
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+#include <string.h>
 ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+#include <string.h>
 WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+#include <string.h>
 DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR
+#include <string.h>
 ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+#include <string.h>
 (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+#include <string.h>
 LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+#include <string.h>
 ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#include <string.h>
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+#include <string.h>
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#include <string.h>
 */
+#include <string.h>
 
 #include "glclient.h"
 #include <GLES3/gl32.h>
@@ -1145,220 +1173,865 @@ GL_APICALL void GL_APIENTRY glDeleteProgramPipelines(GLsizei n, const GLuint *pi
     GLS_PUSH_BATCH(glDeleteProgramPipelines);
 }
 
+#if 0
+
+#endif
 GL_APICALL void GL_APIENTRY glGenProgramPipelines(GLsizei n, GLuint *pipelines) {
+#if 0
+
+#endif
     GLS_SET_COMMAND_PTR(c, glGenProgramPipelines);
+#if 0
+
+#endif
     c->n = n;
+#if 0
+
+#endif
     GLS_SEND_PACKET(glGenProgramPipelines);
+#if 0
+
+#endif
     wait_for_data("glGenProgramPipelines");
+#if 0
+
+#endif
     memcpy(pipelines, glsc_global.tmp_buf.buf, n * sizeof(GLuint));
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 GL_APICALL GLboolean GL_APIENTRY glIsProgramPipeline(GLuint pipeline) {
+#if 0
+
+#endif
     GLS_SET_COMMAND_PTR(c, glIsProgramPipeline);
+#if 0
+
+#endif
     c->pipeline = pipeline;
+#if 0
+
+#endif
     GLS_SEND_PACKET(glIsProgramPipeline);
+#if 0
+
+#endif
     wait_for_data("glIsProgramPipeline");
+#if 0
+
+#endif
     gls_ret_glIsProgramPipeline_t *ret = (gls_ret_glIsProgramPipeline_t *)glsc_global.tmp_buf.buf;
+#if 0
+
+#endif
     return ret->result;
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 GL_APICALL void GL_APIENTRY glGetProgramPipelineiv(GLuint pipeline, GLenum pname, GLint *params) {
+#if 0
+
+#endif
     GLS_SET_COMMAND_PTR(c, glGetProgramPipelineiv);
+#if 0
+
+#endif
     c->pipeline = pipeline;
+#if 0
+
+#endif
     c->pname = pname;
+#if 0
+
+#endif
     GLS_SEND_PACKET(glGetProgramPipelineiv);
+#if 0
+
+#endif
     wait_for_data("glGetProgramPipelineiv");
+#if 0
+
+#endif
     gls_ret_glGetProgramPipelineiv_t *ret = (gls_ret_glGetProgramPipelineiv_t *)glsc_global.tmp_buf.buf;
+#if 0
+
+#endif
     memcpy(params, ret->params, sizeof(ret->params));
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform1i()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform1i);
+#if 0
+
+#endif
     glProgramUniform1i(c->program, c->location, c->v0);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform2i()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform2i);
+#if 0
+
+#endif
     glProgramUniform2i(c->program, c->location, c->v0, c->v1);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform3i()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform3i);
+#if 0
+
+#endif
     glProgramUniform3i(c->program, c->location, c->v0, c->v1, c->v2);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform4i()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform4i);
+#if 0
+
+#endif
     glProgramUniform4i(c->program, c->location, c->v0, c->v1, c->v2, c->v3);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform1ui()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform1ui);
+#if 0
+
+#endif
     glProgramUniform1ui(c->program, c->location, c->v0);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform2ui()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform2ui);
+#if 0
+
+#endif
     glProgramUniform2ui(c->program, c->location, c->v0, c->v1);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform3ui()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform3ui);
+#if 0
+
+#endif
     glProgramUniform3ui(c->program, c->location, c->v0, c->v1, c->v2);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform4ui()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform4ui);
+#if 0
+
+#endif
     glProgramUniform4ui(c->program, c->location, c->v0, c->v1, c->v2, c->v3);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform1f()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform1f);
+#if 0
+
+#endif
     glProgramUniform1f(c->program, c->location, c->v0);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform2f()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform2f);
+#if 0
+
+#endif
     glProgramUniform2f(c->program, c->location, c->v0, c->v1);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform3f()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform3f);
+#if 0
+
+#endif
     glProgramUniform3f(c->program, c->location, c->v0, c->v1, c->v2);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform4f()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform4f);
+#if 0
+
+#endif
     glProgramUniform4f(c->program, c->location, c->v0, c->v1, c->v2, c->v3);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform1iv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform1iv);
+#if 0
+
+#endif
     glProgramUniform1iv(c->program, c->location, c->count, (const GLint *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform2iv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform2iv);
+#if 0
+
+#endif
     glProgramUniform2iv(c->program, c->location, c->count, (const GLint *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform3iv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform3iv);
+#if 0
+
+#endif
     glProgramUniform3iv(c->program, c->location, c->count, (const GLint *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform4iv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform4iv);
+#if 0
+
+#endif
     glProgramUniform4iv(c->program, c->location, c->count, (const GLint *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform1uiv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform1uiv);
+#if 0
+
+#endif
     glProgramUniform1uiv(c->program, c->location, c->count, (const GLuint *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform2uiv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform2uiv);
+#if 0
+
+#endif
     glProgramUniform2uiv(c->program, c->location, c->count, (const GLuint *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform3uiv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform3uiv);
+#if 0
+
+#endif
     glProgramUniform3uiv(c->program, c->location, c->count, (const GLuint *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform4uiv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform4uiv);
+#if 0
+
+#endif
     glProgramUniform4uiv(c->program, c->location, c->count, (const GLuint *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform1fv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform1fv);
+#if 0
+
+#endif
     glProgramUniform1fv(c->program, c->location, c->count, (const GLfloat *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform2fv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform2fv);
+#if 0
+
+#endif
     glProgramUniform2fv(c->program, c->location, c->count, (const GLfloat *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform3fv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform3fv);
+#if 0
+
+#endif
     glProgramUniform3fv(c->program, c->location, c->count, (const GLfloat *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniform4fv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniform4fv);
+#if 0
+
+#endif
     glProgramUniform4fv(c->program, c->location, c->count, (const GLfloat *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniformMatrix2fv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniformMatrix2fv);
+#if 0
+
+#endif
     glProgramUniformMatrix2fv(c->program, c->location, c->count, c->transpose, (const GLfloat *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniformMatrix3fv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniformMatrix3fv);
+#if 0
+
+#endif
     glProgramUniformMatrix3fv(c->program, c->location, c->count, c->transpose, (const GLfloat *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniformMatrix4fv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniformMatrix4fv);
+#if 0
+
+#endif
     glProgramUniformMatrix4fv(c->program, c->location, c->count, c->transpose, (const GLfloat *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniformMatrix2x3fv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniformMatrix2x3fv);
+#if 0
+
+#endif
     glProgramUniformMatrix2x3fv(c->program, c->location, c->count, c->transpose, (const GLfloat *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniformMatrix3x2fv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniformMatrix3x2fv);
+#if 0
+
+#endif
     glProgramUniformMatrix3x2fv(c->program, c->location, c->count, c->transpose, (const GLfloat *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniformMatrix2x4fv()
+#if 0
+
+#endif
 {
+#if 0
+
+#endif
     GLSE_SET_COMMAND_PTR(c, glProgramUniformMatrix2x4fv);
+#if 0
+
+#endif
     glProgramUniformMatrix2x4fv(c->program, c->location, c->count, c->transpose, (const GLfloat *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniformMatrix4x2fv()
-{
-    GLSE_SET_COMMAND_PTR(c, glProgramUniformMatrix4x2fv);
-    glProgramUniformMatrix4x2fv(c->program, c->location, c->count, c->transpose, (const GLfloat *)glsec_global.tmp_buf.buf);
-}
+#if 0
 
+#endif
+{
+#if 0
+
+#endif
+    GLSE_SET_COMMAND_PTR(c, glProgramUniformMatrix4x2fv);
+#if 0
+
+#endif
+    glProgramUniformMatrix4x2fv(c->program, c->location, c->count, c->transpose, (const GLfloat *)glsec_global.tmp_buf.buf);
+#if 0
+
+#endif
+}
+#if 0
+
+#endif
+
+#if 0
+
+#endif
 void glse_glProgramUniformMatrix3x4fv()
+#if 0
+
+#endif
 {
     GLSE_SET_COMMAND_PTR(c, glProgramUniformMatrix3x4fv);
     glProgramUniformMatrix3x4fv(c->program, c->location, c->count, c->transpose, (const GLfloat *)glsec_global.tmp_buf.buf);

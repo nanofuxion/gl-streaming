@@ -6,6 +6,8 @@
 #include "glclient.h"
 #include "GLES2/gl2.h"
 
+void glVertexAttribFloat(GLuint index, GLint num_float, GLboolean call_arr, GLfloat *arr);
+
 
 GL_APICALL void GL_APIENTRY glActiveTexture (GLenum texture)
 {
